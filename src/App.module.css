@@ -1,0 +1,12 @@
+.hello {
+    color: aquamarine;
+    font-family: "KyivType Sans", sans-serif;
+    font-size: 3rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
