@@ -7,12 +7,13 @@ import Feedback from './components/Feedback.jsx';
 function App() {
 
   const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
-    return (
+  const hasFeedback = Object.values(feedback).some((value) => value > 0);
+  return (
         <>
             <div className={css.container}>
               <Description />
-              <Options feedback={feedback} setFeedback={setFeedback} />
-              <Feedback feedback={feedback} />
+              <Options hasFeedback={hasFeedback} setFeedback={setFeedback} />
+              {hasFeedback && <Feedback feedback={feedback} />}
             </div>
         </>
     )

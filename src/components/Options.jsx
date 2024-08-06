@@ -1,7 +1,7 @@
 import css from './Options.module.css';
 import PropTypes from 'prop-types';
 
-const Options = ({feedback, setFeedback}) => {
+const Options = ({hasFeedback, setFeedback}) => {
   const handleFeedback = (type) => {
     setFeedback((prevState) => ({
       ...prevState,
@@ -17,8 +17,6 @@ const Options = ({feedback, setFeedback}) => {
     });
   };
 
-  const hasFeedback = Object.values(feedback).some((value) => value > 0);
-
   return (<div className={css.container}>
     <button className={css.btn} onClick={() => handleFeedback('good')}>Good</button>
     <button className={css.btn} onClick={() => handleFeedback('neutral')}>Neutral</button>
@@ -28,11 +26,7 @@ const Options = ({feedback, setFeedback}) => {
 };
 
 Options.propTypes = {
-  feedback: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  }),
+  hasFeedback: PropTypes.bool.isRequired,
   setFeedback: PropTypes.func.isRequired,
 };
 
