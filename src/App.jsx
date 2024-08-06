@@ -1,10 +1,11 @@
 import css from './App.module.css';
+import Description from './components/Description.jsx';
 
 function App() {
     return (
         <>
             <div className={css.container}>
-                <h1 className={css.hello}>Hello, World!</h1>
+              <Description />
             </div>
         </>
     )
