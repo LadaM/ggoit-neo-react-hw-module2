@@ -3,6 +3,7 @@ import Description from './components/Description.jsx';
 import Options from './components/Options.jsx';
 import { useEffect, useState } from 'react';
 import Feedback from './components/Feedback.jsx';
+import Notification from './components/Notification.jsx';
 
 function App() {
   const initializeState = () => {
@@ -20,7 +21,7 @@ function App() {
             <div className={css.container}>
               <Description />
               <Options hasFeedback={hasFeedback} setFeedback={setFeedback} />
-              {hasFeedback && <Feedback feedback={feedback} />}
+              {hasFeedback ? <Feedback feedback={feedback} /> : <Notification />}
             </div>
         </>
     )
